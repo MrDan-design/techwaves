@@ -1,0 +1,148 @@
+.header-full .header-inner {
+	max-width: none;
+}
+.header-narrow .header-inner {
+	max-width: 792px; // 768px (content) + 12px * 2 (padding on both sides)
+}
+
+.header,
+.header-bottom {
+	border-bottom: 1px solid var(--color-light);
+}
+
+.header-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+// Sticky header.
+.header-sticky {
+	.header,
+	&.menu-bottom .header-bottom {
+		position: sticky;
+		top: 0;
+		background: #fff;
+		z-index: 9999;
+	}
+	&.menu-bottom .header {
+		position: unset;
+	}
+
+	// For logged in users.
+	@media (min-width: 601px) and (max-width: 782px) {
+		&.admin-bar .header,
+		&.admin-bar.menu-bottom .header-bottom {
+			top: 46px;
+		}
+	}
+	@media (min-width: 783px) {
+		&.admin-bar .header,
+		&.admin-bar.menu-bottom .header-bottom {
+			top: 32px;
+		}
+	}
+}
+
+// Transparent header.
+.header-transparent {
+	.header {
+		position: absolute;
+		left: 0;
+		right: 0;
+		background: none;
+		border-bottom-color: rgba(255, 255, 255, .2);
+	}
+	.site-description,
+	.site-title a {
+		color: #fff;
+	}
+	.site-title a:hove {
+		opacity: .75;
+	}
+}
+
+.branding {
+	display: flex;
+	z-index: 1;
+	margin-right: auto;
+}
+.custom-logo-link {
+	margin-right: 12px;
+}
+.custom-logo {
+	display: block;
+}
+.hide-site-name .site-name {
+	display: none;
+}
+.site-title {
+	font-size: var(--text-xl);
+	font-weight: 700;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: var(--tracking-wide);
+	margin: 0;
+
+	a {
+		color: var(--color-dark);
+		text-decoration: none;
+	}
+}
+.header-icon {
+	padding: 8px 0 8px 12px;
+	background: none;
+	border: 0;
+	display: flex;
+	color: inherit;
+	position: relative;
+
+	&:hover {
+		opacity: .75;
+	}
+
+	svg {
+		width: 18px;
+		height: 18px;
+	}
+}
+
+// Highlight last menu item.
+.header-highlight-last-item .nav .menu > li:last-child > a {
+	background: var(--color-accent);
+	color: #fff;
+	border-radius: 4px;
+	padding: 8px 12px;
+	margin-left: 12px;
+	transition: all .25s;
+
+	&:hover {
+		opacity: .75;
+	}
+}
+
+@media (min-width: 768px) {
+	.header-bottom .menu > li:first-of-type > a {
+		padding-left: 0;
+	}
+	.header-icon ~ .header-icon {
+		padding-left: 24px;
+	}
+}
+@media (min-width: 1024px) {
+	.header-transparent {
+		.nav > ul > li > a,
+		.nav > ul > li > .menu-text > a,
+		.nav > ul > li > .menu-text > .sub-menu-toggle {
+			color: #fff;
+		}
+		.nav > ul > li:hover > a,
+		.nav > ul > li:hover > .menu-text > a,
+		.nav > ul > li:hover > .menu-text > .sub-menu-toggle {
+			opacity: .75;
+		}
+	}
+}

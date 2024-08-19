@@ -1,0 +1,49 @@
+.custom-logo {
+	//width: 35px;
+}
+
+.header-sticky {
+	header.header {
+		//background-color: #2E2B2B;
+	}
+}
+
+.header .nav a {
+	//font-weight: 400;
+	//text-transform: initial;
+}
+.header .nav a:hover {
+
+}
+.header .nav .current-menu-item a,
+.header .primary-nav .current-menu-item a {
+	//color: var(--color-accent);
+}
+
+
+//Gutenberg
+
+.wp-block-group.has-background {
+	padding: 40px 30px;
+}
+
+.wp-block-cover.featured-cover {
+	padding: 0;
+	height: initial;
+	.wp-block-cover__inner-container {
+		padding: 16px;
+		background-color: #fff;
+		color: #000;
+	}
+}
+
+nav .breadcrumb {
+	text-align: left;
+	padding: 0.6rem 0;
+	font-size: 0.8rem;
+}
+
+.wide-button {
+	width: 100%;
+	text-align: center;
+}

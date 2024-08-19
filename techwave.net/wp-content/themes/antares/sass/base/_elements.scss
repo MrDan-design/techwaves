@@ -1,0 +1,110 @@
+body {
+	box-sizing: border-box;
+	word-break: break-word;
+	background: #fff;
+	overflow-x: hidden; // Fix horizontal scrollbar for .alignfull
+}
+*:focus {
+	outline: 1px dotted;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+// Forms.
+input,
+textarea,
+select {
+	border: 1px solid var(--color-light);
+	border-radius: 4px;
+	padding: 8px 12px;
+	line-height: 24px;
+	font-size: var(--text-md);
+	color: var(--color-base);
+}
+textarea {
+	width: 100%;
+}
+select {
+	max-width: 100%;
+}
+button, input[type="button"], input[type="submit"], input[type="reset"], .button {
+	@include button;
+
+	&[disabled] {
+		background-color: var(--color-gray);
+	}
+}
+fieldset {
+	padding: 8px 12px;
+	margin-bottom: 1.5em;
+	border: 1px solid var(--color-light);
+	border-radius: 4px;
+}
+legend {
+	padding: 0 4px; 
+}
+
+p, ul, ol, blockquote, pre, figure, dl, dd, table, address {
+	margin: 0 0 1.5em;
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul {
+	padding-left: 2rem;
+}
+ol {
+	padding-left: 2rem;
+}
+li > ul,
+li > ol {
+	margin-bottom: 0;
+}
+
+hr {
+	background-color: var(--color-light);
+	border: 0;
+	height: 2px;
+	margin-bottom: 1.5em;
+}
+
+label {
+	cursor: pointer;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+th, td {
+	border: 1px solid var(--color-light);
+	padding: 8px 12px;
+}
+
+img, video, svg {
+	max-width: 100%;
+	height: auto;
+}
+embed, iframe, object {
+	max-width: 100%;
+}
+
+pre, code, kbd, samp, tt, var {
+	font-family: var(--font-mono);
+	font-size: var(--text-md);
+}
+pre {
+	white-space: pre-wrap;
+}
+
+// SVG icons.
+.icon {
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+}
